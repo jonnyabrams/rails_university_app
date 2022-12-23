@@ -6,4 +6,14 @@ class StudentsController < ApplicationController
   def new
     @student = Student.new
   end
+
+  def create
+    @student = Student.new(student_params)
+  end
+
+  private
+
+  def student_params
+    params.require(:student).permit(:name, :email)
+  end
 end
