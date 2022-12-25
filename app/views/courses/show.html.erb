@@ -6,11 +6,7 @@
         <p>Short Name: <%= @course.short_name %></p>
         <p>Description: <%= @course.description %></p>
       </div>
-    </div>
-     <%
-=begin%>
- <%= link_to '<i class="material-icons right">create</i>Edit this course'.html_safe, edit_course_path(@course), class: "waves-effect waves-light btn" %> 
-<%
-=end%>
+    </div>  
+    <%= link_to '<i class="material-icons right">create</i>Edit this course'.html_safe, edit_course_path(@course), class: "waves-effect waves-light btn" %> 
   </div>
 </div>
