@@ -1,5 +1,6 @@
 class CoursesController < ApplicationController
   before_action :set_course, only: [:show, :edit, :update, :destroy]
+  before_action :require_admin, only: [:edit, :update]
 
   def index 
     @courses = Course.all
@@ -52,5 +53,12 @@ class CoursesController < ApplicationController
 
   def course_params
     params.require(:course).permit(:name, :short_name, :description)
+  end
+
+  def require_admin
+    if current_user.email != "jonny@jonny.com"
+      flash[:notice] = "You are not authorised to access this page"
+      redirect_to root_path
+    end
   end
 end
