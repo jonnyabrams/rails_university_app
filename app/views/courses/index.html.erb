@@ -21,7 +21,7 @@
           <p><%= course.description %></p>
         </div>
         <div class="card-action">
-          <% if logged_in? %>
+          <% if logged_in? && !(current_user.courses.include?(course)) %>
             <%= link_to "Enroll", "#" %>
           <% end %>
           <%= link_to "Info", course_path(course) %>
