@@ -19,7 +19,7 @@
         </ul>
         <ul class="sidenav" id="mobile-demo">
           <li><%= link_to "Courses", root_path %></li>
-          <% if logged_in? %>
+          <% if logged_in? && !(current_user.courses.include?(course)) %>
             <li><%= link_to "Students", students_path %></li>
           <% end %>
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown2">Account<i class="material-icons right">arrow_drop_down</i></a></li>
