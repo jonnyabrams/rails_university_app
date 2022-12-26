@@ -22,7 +22,7 @@
         </div>
         <div class="card-action">
           <% if logged_in? %>
-            <a href="#">Enroll</a>
+            <%= link_to "Enroll", "#" %>
           <% end %>
           <%= link_to "Info", course_path(course) %>
           <%= link_to '<i class="material-icons right">delete</i>'.html_safe, course, method: :delete %>
