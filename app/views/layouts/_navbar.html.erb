@@ -1,9 +1,15 @@
 <header>
   <ul id="dropdown1" class="dropdown-content">
     <li><%= session_link %></li>
+    <% if logged_in? %>
+      <li><%= link_to "View Your Profile", student_path(current_user) %></li>
+    <% end %>
   </ul>
   <ul id="dropdown2" class="dropdown-content">
     <li><%= session_link %></li>
+    <% if logged_in? %>
+      <li><%= link_to "View Your Profile", student_path(current_user) %></li>
+    <% end %>
   </ul>
   <nav>
     <div class="container">
